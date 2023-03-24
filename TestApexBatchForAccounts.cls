@@ -11,6 +11,7 @@ public class TestApexBatch implements Database.Batchable<Sobject> {
         update lstFromStart;
     }
     
+    //Calling the second batch Apex Class
     public void finish(Database.BatchableContext bc){
         system.debug('Account updated for batch process');
         Database.executeBatch(new TestApexBatchForContacts() , 200); //Calling another batch from this batch class
